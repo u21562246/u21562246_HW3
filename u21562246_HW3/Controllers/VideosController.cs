@@ -18,10 +18,10 @@ namespace u21562246_HW3.Controllers
             string[] filePaths = System.IO.Directory.GetFiles(Server.MapPath("~/Media/Videos/"));
 
             //Copy Videos names to Model collection.
-            List<ModelForFile> files = new List<ModelForFile>();
+            List<FileModel> files = new List<FileModel>();
             foreach (string filePath in filePaths)
             {
-                files.Add(new ModelForFile { NameOfSelectedFile = System.IO.Path.GetFileName(filePath) });
+                files.Add(new FileModel { FileName = System.IO.Path.GetFileName(filePath) });
             }
 
             return View(files);

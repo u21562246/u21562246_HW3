@@ -5,8 +5,8 @@ using System.Web;
 
 namespace u21562246_HW3.Models
 {
-    public class ModelForFile
+    public class FileModel
     {
-        public string NameOfSelectedFile { get; set; }
+        public string FileName { get; set; }
     }
 }
