@@ -1,0 +1,51 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<h2>Media</h2>
+<div class="jumbotron">
+    <p>Welcome to Media this page allows you as the user to upload images, videos and documents as well as download them.</p>
+    <div class="row">
+        <div class="col-md-8">
+            <h2>Description of how the system works</h2>
+            <p>
+                This system is very easy to use all it requires id for the user to start off by selecting from the options 
+                provided which are bettween documents, images and videos. Once the user has choosen the option by clicking 
+                a radio button. The user may then press the "Choose file" button and upload a document if they have pressed the 
+                document button, or image if they have choosen an image or a video if they have choosen a video.
+                Once the user is done he/she may press the submit button and based on what he/she has uploaded they may use the NavBar
+                to navigate towhat they want to see this may be a File, Image, Video or if the user is interested a short Bio about...
+                Yess you guessed it Me!!!!
+            </p>
+
+        </div>
+        @ViewBag.Status
+        <div class="col-md-4">
+            <h2>Options Selection</h2>
+            @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                <form>
+                    <label>Document</label>
+                    <input type="radio" name="btnOptionSelection" value="Document" />
+                    <br />
+
+                    <label>Images</label>
+                    <input type="radio" name="btnOptionSelection" value="Image" />
+                    <br />
+
+                    <label>Videos</label>
+                    <input type="radio" name="btnOptionSelection" value="Video"/>
+                    <br />
+
+                    <input type="file" name="file"  id="file"/>
+                    <br />
+
+                    <button type="submit">Submit</button>
+                </form>
+            }
+
+        </div>
+    </div>
+
+</div>
+
